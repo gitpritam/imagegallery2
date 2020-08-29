@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+    <script src="https://file.myfontastic.com/GboQjooEbEKuYHVHtTCXRT/icons.js"></script>
+</head>
+
+<body>
+    <div class="tooltip fullscreen--tooltip">Fullscreen(f)</div>
+    <div class="shortcut--details">
+        <table id="keyboard-table">
+            <thead>
+                <tr>
+                    <th colspan="2">Keyboard</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Previous Image</td>
+                    <td>Right Arrow</td>
+                </tr>
+                <tr>
+                    <td>Next Image</td>
+                    <td>Right Arrow</td>
+                </tr>
+                <tr>
+                    <td>First Image</td>
+                    <td>Home</td>
+                </tr>
+                <tr>
+                    <td>Last Image</td>
+                    <td>End</td>
+                </tr>
+                <tr>
+                    <td>Fullscreen Mode</td>
+                    <td>F</td>
+                </tr>
+                <tr>
+                    <td>window Mode</td>
+                    <td>W</td>
+                </tr>
+                <tr>
+                    <td>Slideshow Play</td>
+                    <td>Spacebar</td>
+                </tr>
+                <tr>
+                    <td>Slideshow Stop</td>
+                    <td>Spacebar</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Touch Device</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>Previous Image</td>
+                <td>Swipe Right</td>
+            </tr>
+            <tr>
+                <td>Next Image</td>
+                <td>Swipe Left</td>
+            </tr>
+        </table>
+        <div class="btn back">Back</div>
+    </div>
+    <div class="container__setting">
+        <div class="btn shortcut">Shortcut</div>
+        
+        <div class="slide-dir">
+            <label for="slideshow-direction">Slideshow Direction:</label>
+            <input type="radio" id="forward" name="direction" value="forward" checked />
+            <label for="forward">Forward</label>
+            <input type="radio" id="backward" name="direction" value="backward" />
+            <label for="backward">backward</label>
+        </div>
+        <div class="slide-timing">
+            <label for="timing">Slideshow Intarval:
+                <select name="timing" id="timing">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3" class="selected" selected>3 (default)</option>
+                    <option value="4">4</option>
+                    <option value="5 ">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                </select>
+                second
+            </label>
+        </div>
+        <div class="close btn">
+            Close
+        </div>
+    </div>
+    <div class="container">
+        <div class="container__preview">
+            <img src="https://source.unsplash.com/daily/?nature,water" alt="thumbnail"
+                class="animation-focus-in-contract" />
+
+            <div class="preview-function">
+                <div class="slideshow">
+                    <svg class="icon-play play">
+                        <use xlink:href="#icon-play"></use>
+                    </svg>
+                    <!-- <svg class="icon-stop stop"><use xlink:href="#icon-stop"></use></svg> -->
+                </div>
+                <div class="fullscreen">
+                    <svg class="icon-android-expand fullscreened">
+                        <use xlink:href="#icon-android-expand"></use>
+                    </svg>
+                    <!-- <svg class="icon-android-contract windowed"><use xlink:href="#icon-android-contract"></use></svg> -->
+                </div>
+                <div class="setting">
+                    <svg class="icon-cog">
+                        <use xlink:href="#icon-cog"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="container__slider">
+            <div class="leftbutton btn">
+                <svg class="icon-caret-left">
+                    <use xlink:href="#icon-caret-left"></use>
+                </svg>
+            </div>
+            <div class="container__slider--thumbnail">
+                <div class="thumbnail active">
+                    <img src="https://source.unsplash.com/daily/?nature,water" alt="thumbnail" />
+                </div>
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/daily/?potrait" alt="thumbnail" />
+                </div>
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/daily/?technology" alt="thumbnail" />
+                </div>
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/daily/?food" alt="thumbnail" />
+                </div>
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/daily/?sky" alt="thumbnail" />
+                </div>
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/daily/?landscape" alt="thumbnail" />
+                </div>
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/daily/?coding" alt="thumbnail" />
+                </div>
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/daily/?animals" alt="thumbnail" />
+                </div>
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/daily/?fashion" alt="thumbnail" />
+                </div>
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/daily/?art" alt="thumbnail" />
+                </div>
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/daily/?people" alt="thumbnail" />
+                </div>
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/daily/?birds" alt="thumbnail" />
+                </div>
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/daily/?blacknwhite" alt="thumbnail" />
+                </div>
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/daily/?india" alt="thumbnail" />
+                </div>
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/daily/?country" alt="thumbnail" />
+                </div>
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/daily/?ocean" alt="thumbnail" />
+                </div>
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/daily/?tree" alt="thumbnail" />
+                </div>
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/daily/?star" alt="thumbnail" />
+                </div>
+                <div class="thumbnail">
+                    <img src="https://source.unsplash.com/daily/?astronomy" alt="thumbnail" />
+                </div>
+            </div>
+            <div class="rightbutton btn">
+                <svg class="icon-caret-right">
+                    <use xlink:href="#icon-caret-right"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
