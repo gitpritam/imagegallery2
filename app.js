@@ -80,7 +80,7 @@ let domSelector = (function () {
   let indexOfActiveElement = 0;
   let slideshowSetIntervalID;
   let slideshowInterval = 3000;
-  let slideshowDirection = "forward";
+  let slideshowDirection = 'forward';
 
   function updateThumbnail(x) {
     //remove active class from active eliment
@@ -280,9 +280,6 @@ let domSelector = (function () {
   /*********************************************************** */
   // slideshow play stop
   const slideshow = (e) => {
-    slideshowDirection = document.querySelector(
-      'input[name="direction"]:checked'
-    ).value;
 
     if (DOM.slideshow.firstElementChild.classList.contains("play")) {
       if (slideshowDirection === "forward") {
@@ -443,8 +440,14 @@ let domSelector = (function () {
 
   DOM.settingClose.addEventListener("click", (e) => {
     DOM.settingContainer.style.display = "none";
+    slideshowDirection = document.querySelector(
+      'input[name="direction"]:checked'
+    ).value;
   });
   DOM.settingClose.addEventListener("touchstart", (e) => {
     DOM.settingContainer.style.display = "none";
+    slideshowDirection = document.querySelector(
+      'input[name="direction"]:checked'
+    ).value;
   });
 })(domSelector);
