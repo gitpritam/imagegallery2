@@ -138,7 +138,7 @@ let domSelector = (function () {
 
   //scroll event //mouse wheel
   // DOM.thumbnailContainer.addEventListener()
-  window.addEventListener("mousewheel", (e) => {
+  window.addEventListener("wheel", (e) => {
     if (e.deltaY > 0) {
       DOM.thumbnailContainer.scrollLeft += 400;
     } else {
