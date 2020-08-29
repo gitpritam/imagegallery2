@@ -80,10 +80,8 @@ let domSelector = (function () {
   let indexOfActiveElement = 0;
   let slideshowSetIntervalID;
   let slideshowInterval = 3000;
+  let slideshowDirection = "forward";
 
-  const setting = {
-    slideshowDirection: "forward",
-  };
   function updateThumbnail(x) {
     //remove active class from active eliment
     activeElement.classList.remove("active");
@@ -282,12 +280,38 @@ let domSelector = (function () {
   /*********************************************************** */
   // slideshow play stop
   const slideshow = (e) => {
+    slideshowDirection = document.querySelector(
+      'input[name="direction"]:checked'
+    ).value;
+
     if (DOM.slideshow.firstElementChild.classList.contains("play")) {
-      DOM.slideshow.innerHTML =
-        '<svg class="icon-stop stop"><use xlink:href="#icon-stop"></use></svg>';
-      slideshowSetIntervalID = setInterval(() => {
-        rightButtonEvent(e);
-      }, slideshowInterval);
+      if (slideshowDirection === "forward") {
+        DOM.slideshow.innerHTML =
+          '<svg class="icon-stop stop"><use xlink:href="#icon-stop"></use></svg>';
+        slideshowSetIntervalID = setInterval(() => {
+          rightButtonEvent(e);
+          if (DOM.slideshow.firstElementChild.classList.contains("stop")) {
+            if (indexOfActiveElement === DOM.thumbnails.length - 1) {
+              DOM.slideshow.innerHTML =
+                '<svg class="icon-play play"><use xlink:href="#icon-play"></use></svg>';
+              clearInterval(slideshowSetIntervalID);
+            }
+          }
+        }, slideshowInterval);
+      } else {
+        DOM.slideshow.innerHTML =
+          '<svg class="icon-stop stop"><use xlink:href="#icon-stop"></use></svg>';
+        slideshowSetIntervalID = setInterval(() => {
+          leftButtonEvent(e);
+          if (DOM.slideshow.firstElementChild.classList.contains("stop")) {
+            if (indexOfActiveElement === 0) {
+              DOM.slideshow.innerHTML =
+                '<svg class="icon-play play"><use xlink:href="#icon-play"></use></svg>';
+              clearInterval(slideshowSetIntervalID);
+            }
+          }
+        }, slideshowInterval);
+      }
     } else if (DOM.slideshow.firstElementChild.classList.contains("stop")) {
       DOM.slideshow.innerHTML =
         '<svg class="icon-play play"><use xlink:href="#icon-play"></use></svg>';
@@ -394,7 +418,6 @@ let domSelector = (function () {
     DOM.slideIntarval.addEventListener("change", (e) => {
       slideshowInterval = e.target.value * 1000;
     });
-    setInterval(() => console.log(slideshowInterval), 1000);
   };
   DOM.setting.addEventListener("click", settingfunc);
   DOM.setting.addEventListener("touchstart", settingfunc);
